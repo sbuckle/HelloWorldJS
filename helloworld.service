@@ -1,0 +1,12 @@
+[Unit]
+Description=Run helloworld nodejs application
+After=network-online.target
+Wants=network-online.target
+[Service]
+User=ec2-user
+ExecStart=/usr/bin/node /home/ec2-user/helloworld.js
+ExecStop=
+Restart=on-failure
+KillMode=process
+[Install]
+WantedBy=multi-user.target
